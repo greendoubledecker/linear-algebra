@@ -31,9 +31,27 @@ int main(){
 			cin >> matrix[i][j];
 		}
 	}
-	int pow;
+	int pow = 0;
 	cout << "Input the power you want the matrix raised to." << endl;
 	cin >> pow;
+	if(pow == 0){
+		cout << "The 0th power is the identity matrix, or" << endl;
+		for(int i = 0; i < size; ++i){
+			for(int j = 0; j < size; ++j){
+				if(i == j){
+					cout << 1;
+				}else{
+					cout << 0;
+				}
+			}
+			cout << endl;
+		}
+		return 0;
+	}
+	if(pow < 0){
+		cout << "MathError: Please do not input a negative power." << endl;
+		return 0;
+	}
 	vector<vector<long long>> result = matrix;
 	for(int i = 1; i < pow; ++i){
 		result = mulMatrix(matrix, result, size);
