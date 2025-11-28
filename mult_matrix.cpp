@@ -5,6 +5,7 @@ using namespace std;
 
 int main(){
 	int rows1, cols1, rows2, cols2;
+	cout << "Input the dimensions of both matrices(rows, cols, rows, cols)." << endl;
 	cin >> rows1 >> cols1 >> rows2 >> cols2;
 	if(cols1 != rows2) {
 		cout << "MathError: the number of columns in the first matrix must be the same as the number of rows in the second.";
